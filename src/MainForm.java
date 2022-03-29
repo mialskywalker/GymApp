@@ -32,8 +32,6 @@ public class MainForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel_membersNumber = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -116,19 +114,16 @@ public class MainForm extends javax.swing.JFrame {
                 .addContainerGap(196, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
-        jMenu1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenu2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu2);
-
         jMenu3.setText("Gyms");
         jMenu3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jMenuItem1.setText("Add");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem1);
 
         jMenuBar1.add(jMenu3);
@@ -148,6 +143,16 @@ public class MainForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // Open AddGymBranch
+        
+        AddGymBranch AddGB = new AddGymBranch();
+        AddGB.setVisible(true);
+        AddGB.pack();
+        AddGB.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,8 +193,6 @@ public class MainForm extends javax.swing.JFrame {
     public static javax.swing.JLabel jLabel_Gymname;
     public static javax.swing.JLabel jLabel_gymNumber;
     public static javax.swing.JLabel jLabel_membersNumber;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
