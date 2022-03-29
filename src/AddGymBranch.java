@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -149,10 +152,33 @@ public class AddGymBranch extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton_CancelActionPerformed
 
+    public boolean verifyText() {
+        
+        if(jTextField_City.getText().equals("") || jTextField_Street.getText().equals("")
+                || jTextField_WorkingTime.getText().equals("")
+                || jTextField_WorkingDays.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Empty fields are not allowed!");
+            return false;
+        }else{
+            return true;
+        }
+        
+    }
+    
     private void jButton_AddGymActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddGymActionPerformed
         
+        String city = jTextField_City.getText();
+        String street = jTextField_Street.getText();
+        String workingHours = jTextField_WorkingTime.getText();
+        String workingDays = jTextField_WorkingDays.getText();
         
-        
+        if(verifyText()){
+            gymBranch gymB = new gymBranch();
+            gymB.insertUpdateDeleteGymBranch('i', null, city, street, workingHours, workingDays);
+            MainForm.jLabel_gymNumber.setText("Number of Gyms = "+Integer.toString(MyFunction.countData("gym_branch")));
+        }
+                
     }//GEN-LAST:event_jButton_AddGymActionPerformed
 
     /**
