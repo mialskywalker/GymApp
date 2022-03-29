@@ -147,10 +147,23 @@ public class AddGymBranch extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CancelActionPerformed
-        
+
         this.dispose();
-        
     }//GEN-LAST:event_jButton_CancelActionPerformed
+
+    private void jButton_AddGymActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddGymActionPerformed
+
+        String city = jTextField_City.getText();
+        String street = jTextField_Street.getText();
+        String workingHours = jTextField_WorkingTime.getText();
+        String workingDays = jTextField_WorkingDays.getText();
+
+        if(verifyText()){
+            gymBranch gymB = new gymBranch();
+            gymB.insertUpdateDeleteGymBranch('i', null, city, street, workingHours, workingDays);
+            MainForm.jLabel_gymNumber.setText("Number of Gyms = "+Integer.toString(MyFunction.countData("gym_branch")));
+        }
+    }//GEN-LAST:event_jButton_AddGymActionPerformed
 
     public boolean verifyText() {
         
@@ -166,21 +179,6 @@ public class AddGymBranch extends javax.swing.JFrame {
         
     }
     
-    private void jButton_AddGymActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AddGymActionPerformed
-        
-        String city = jTextField_City.getText();
-        String street = jTextField_Street.getText();
-        String workingHours = jTextField_WorkingTime.getText();
-        String workingDays = jTextField_WorkingDays.getText();
-        
-        if(verifyText()){
-            gymBranch gymB = new gymBranch();
-            gymB.insertUpdateDeleteGymBranch('i', null, city, street, workingHours, workingDays);
-            MainForm.jLabel_gymNumber.setText("Number of Gyms = "+Integer.toString(MyFunction.countData("gym_branch")));
-        }
-                
-    }//GEN-LAST:event_jButton_AddGymActionPerformed
-
     /**
      * @param args the command line arguments
      */

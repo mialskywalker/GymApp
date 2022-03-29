@@ -146,7 +146,7 @@ public class LoginForm extends javax.swing.JFrame {
                 mf.pack();
                 mf.setLocationRelativeTo(null);
                 MainForm.jLabel_Gymname.setText("Welcome to "+jTextField_Gymname.getText()+"");
-                MainForm.jLabel_gymNumber.setText("Number of Gyms = "+Integer.toString(MyFunction.countData("gym")));
+                MainForm.jLabel_gymNumber.setText("Number of Gyms = "+Integer.toString(MyFunction.countData("gym_branch")));
                 MainForm.jLabel_membersNumber.setText("Gym members = "+Integer.toString(MyFunction.countData("gym")));
                 this.dispose();
             }else{

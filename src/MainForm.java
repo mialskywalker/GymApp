@@ -1,3 +1,6 @@
+
+import javax.swing.JFrame;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -151,6 +154,7 @@ public class MainForm extends javax.swing.JFrame {
         AddGB.setVisible(true);
         AddGB.pack();
         AddGB.setLocationRelativeTo(null);
+        AddGB.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
